@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Trilhas de Aprendizagem Personalizadas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+        }
+        .progress-ring__circle {
+            transition: stroke-dashoffset 0.35s;
+            transform: rotate(-90deg);
+            transform-origin: 50% 50%;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Header -->
+    <header class="gradient-bg text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Trilhas de Aprendizagem Personalizadas</h1>
+                    <p class="text-xl text-indigo-100 mb-6">Aumentando o engajamento e reduzindo a evasão através da personalização</p>
+                    <button class="bg-white text-indigo-600 px-6 py-3 rounded-lg font-semibold hover:bg-indigo-50 transition duration-300">
+                        Saiba Mais
+                    </button>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="https://illustrations.popsy.co/amber/online-learning.svg" alt="Online Learning" class="w-3/4 floating">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Problem Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">O Problema que Solucionamos</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-8 rounded-xl border border-gray-200 card-hover transition duration-300">
+                    <div class="text-indigo-600 mb-4">
+                        <i class="fas fa-chart-line text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Baixa Taxa de Conclusão</h3>
+                    <p class="text-gray-600">Apenas 40% dos alunos completam os cursos online devido à falta de personalização.</p>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-xl border border-gray-200 card-hover transition duration-300">
+                    <div class="text-indigo-600 mb-4">
+                        <i class="fas fa-user-graduate text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Falta de Engajamento</h3>
+                    <p class="text-gray-600">70% dos alunos relatam que os conteúdos não se adaptam ao seu ritmo de aprendizado.</p>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-xl border border-gray-200 card-hover transition duration-300">
+                    <div class="text-indigo-600 mb-4">
+                        <i class="fas fa-chalkboard-teacher text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Dificuldade de Monitoramento</h3>
+                    <p class="text-gray-600">Professores não conseguem acompanhar efetivamente o progresso individual dos alunos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Features -->
+    <section class="py-16 bg-indigo-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Nossa Solução</h2>
+            
+            <div class="flex flex-col md:flex-row items-center mb-16">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <img src="https://illustrations.popsy.co/amber/digital-nomad.svg" alt="Personalized Learning" class="w-full">
+                </div>
+                <div class="md:w-1/2 md:pl-12">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">Trilhas de Aprendizagem Personalizadas</h3>
+                    <p class="text-gray-600 mb-6">Nosso sistema adapta os conteúdos educacionais com base no desempenho e preferências individuais de cada aluno, aumentando significativamente o engajamento e taxas de conclusão.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-600 mt-1 mr-2"></i>
+                            <span class="text-gray-700">Algoritmo de recomendação inteligente</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-600 mt-1 mr-2"></i>
+                            <span class="text-gray-700">Dashboard de progresso em tempo real</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-600 mt-1 mr-2"></i>
+                            <span class="text-gray-700">Notificações personalizadas</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-600 mt-1 mr-2"></i>
+                            <span class="text-gray-700">Total conformidade com a LGPD</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row-reverse items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <img src="https://illustrations.popsy.co/amber/designer.svg" alt="Dashboard" class="w-full">
+                </div>
+                <div class="md:w-1/2 md:pr-12">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">Painel de Controle Completo</h3>
+                    <p class="text-gray-600 mb-6">Professores e coordenadores têm acesso a um painel detalhado que mostra o progresso de cada aluno, identificando pontos de dificuldade e sugerindo intervenções.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="font-medium text-gray-700">Implementação em Fases</span>
+                            <span class="text-sm text-indigo-600 bg-indigo-50 px-2 py-1 rounded">Planejamento</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2.5">
+                            <div class="bg-indigo-600 h-2.5 rounded-full" style="width: 25%"></div>
+                        </div>
+                        <div class="flex justify-between text-xs text-gray-500 mt-2">
+                            <span>Fase 1: Algoritmo</span>
+                            <span>Fase 4: Feedback</span>
+                        </div>
+                    </div>
+                    
+                    <button class="bg-indigo-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-indigo-700 transition duration-300">
+                        Ver Demonstração
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Metrics -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Resultados Esperados</h2>
+            
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm text-center">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-indigo-50 rounded-full mb-4">
+                        <i class="fas fa-user-check text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-indigo-600 mb-2">+80%</h3>
+                    <p class="text-gray-600">Taxa de conclusão</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm text-center">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-indigo-50 rounded-full mb-4">
+                        <i class="fas fa-heart text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-indigo-600 mb-2">90%</h3>
+                    <p class="text-gray-600">Satisfação dos alunos</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm text-center">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-indigo-50 rounded-full mb-4">
+                        <i class="fas fa-clock text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-indigo-600 mb-2">2s</h3>
+                    <p class="text-gray-600">Tempo de carregamento</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm text-center">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-indigo-50 rounded-full mb-4">
+                        <i class="fas fa-shield-alt text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-indigo-600 mb-2">100%</h3>
+                    <p class="text-gray-600">Conformidade LGPD</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Student Dashboard Preview -->
+    <section class="py-16 bg-gray-900 text-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Visualização do Aluno</h2>
+            
+            <div class="bg-gray-800 rounded-2xl p-8 max-w-4xl mx-auto">
+                <div class="flex justify-between items-center mb-8">
+                    <h3 class="text-xl font-semibold">Minha Trilha de Aprendizagem</h3>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 rounded-full bg-indigo-600 flex items-center justify-center mr-2">
+                            <span class="font-semibold">RL</span>
+                        </div>
+                        <span>Rodrigo Lampert</span>
+                    </div>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-6 mb-8">
+                    <div class="bg-gray-700 p-4 rounded-lg">
+                        <h4 class="text-sm text-gray-400 mb-1">Progresso Geral</h4>
+                        <div class="relative w-20 h-20 mx-auto mb-2">
+                            <svg class="w-full h-full" viewBox="0 0 36 36">
+                                <path
+                                    d="M18 2.0845
+                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                    a 15.9155 15.9155 0 0 1 0 -31.831"
+                                    fill="none"
+                                    stroke="#4B5563"
+                                    stroke-width="3"
+                                    stroke-dasharray="100, 100"
+                                />
+                                <path
+                                    class="progress-ring__circle"
+                                    d="M18 2.0845
+                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                    a 15.9155 15.9155 0 0 1 0 -31.831"
+                                    fill="none"
+                                    stroke="#818CF8"
+                                    stroke-width="3"
+                                    stroke-dasharray="65, 100"
+                                />
+                            </svg>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <span class="text-white font-bold">65%</span>
+                            </div>
+                        </div>
+                        <p class="text-center text-sm text-gray-300">Você está à frente de 72% da turma</p>
+                    </div>
+                    
+                    <div class="bg-gray-700 p-4 rounded-lg">
+                        <h4 class="text-sm text-gray-400 mb-3">Próxima Atividade</h4>
+                        <div class="flex items-center">
+                            <div class="bg-indigo-600 rounded-lg p-2 mr-3">
+                                <i class="fas fa-book text-white"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-medium">Módulo 3: Análise de Requisitos</h5>
+                                <p class="text-xs text-gray-400">Prazo: 15/05/2025</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-700 p-4 rounded-lg">
+                        <h4 class="text-sm text-gray-400 mb-3">Recomendações</h4>
+                        <div class="flex items-center">
+                            <div class="bg-purple-600 rounded-lg p-2 mr-3">
+                                <i class="fas fa-video text-white"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-medium">Vídeo complementar</h5>
+                                <p class="text-xs text-gray-400">Baseado no seu progresso</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <h4 class="text-lg font-medium mb-4">Seus Módulos</h4>
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between bg-gray-700 p-3 rounded-lg">
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-check text-white text-xs"></i>
+                            </div>
+                            <span>Módulo 1: Introdução</span>
+                        </div>
+                        <span class="text-sm text-gray-400">100% concluído</span>
+                    </div>
+                    
+                    <div class="flex items-center justify-between bg-gray-700 p-3 rounded-lg">
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-check text-white text-xs"></i>
+                            </div>
+                            <span>Módulo 2: Identificação de Problemas</span>
+                        </div>
+                        <span class="text-sm text-gray-400">100% concluído</span>
+                    </div>
+                    
+                    <div class="flex items-center justify-between bg-indigo-600/20 p-3 rounded-lg border border-indigo-600/50">
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-indigo-600 rounded-full flex items-center justify-center mr-3">
+                                <span class="text-white text-xs">3</span>
+                            </div>
+                            <span>Módulo 3: Análise de Requisitos</span>
+                        </div>
+                        <span class="text-sm">65% concluído</span>
+                    </div>
+                    
+                    <div class="flex items-center justify-between bg-gray-700 p-3 rounded-lg opacity-60">
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-gray-600 rounded-full flex items-center justify-center mr-3">
+                                <span class="text-white text-xs">4</span>
+                            </div>
+                            <span>Módulo 4: Planejamento da Solução</span>
+                        </div>
+                        <span class="text-sm text-gray-400">Bloqueado</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-16 gradient-bg text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-6">Pronto para transformar a experiência de aprendizagem?</h2>
+            <p class="text-xl text-indigo-100 mb-8 max-w-2xl mx-auto">Junte-se a nós no projeto piloto e seja um dos primeiros a experimentar trilhas de aprendizagem verdadeiramente personalizadas.</p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <button class="bg-white text-indigo-600 px-8 py-3 rounded-lg font-semibold hover:bg-indigo-50 transition duration-300">
+                    Inscreva-se no Piloto
+                </button>
+                <button class="bg-transparent border-2 border-white px-8 py-3 rounded-lg font-semibold hover:bg-white/10 transition duration-300">
+                    Fale com Nossa Equipe
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-white text-lg font-semibold mb-4">Trilhas Personalizadas</h3>
+                    <p class="mb-4">Sistema de trilhas de aprendizagem personalizadas para aumentar o engajamento e reduzir a evasão em cursos online.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-white text-lg font-semibold mb-4">Links Rápidos</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white transition">Sobre o Projeto</a></li>
+                        <li><a href="#" class="hover:text-white transition">Metodologia</a></li>
+                        <li><a href="#" class="hover:text-white transition">Resultados</a></li>
+                        <li><a href="#" class="hover:text-white transition">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-white text-lg font-semibold mb-4">Contato</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-2"></i>
+                            <span>Plataforma online da instituição</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-2"></i>
+                            <span>contato@trilhaspersonalizadas.edu</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-white text-lg font-semibold mb-4">Legal</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white transition">Termos de Serviço</a></li>
+                        <li><a href="#" class="hover:text-white transition">Política de Privacidade</a></li>
+                        <li><a href="#" class="hover:text-white transition">LGPD</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p>&copy; 2025 Sistema de Trilhas de Aprendizagem Personalizadas. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple animation for the progress ring
+        document.addEventListener('DOMContentLoaded', function() {
+            const progressRing = document.querySelector('.progress-ring__circle');
+            const radius = progressRing.r.baseVal.value;
+            const circumference = radius * 2 * Math.PI;
+            
+            progressRing.style.strokeDasharray = `${circumference} ${circumference}`;
+            progressRing.style.strokeDashoffset = circumference;
+            
+            const offset = circumference - 65 / 100 * circumference;
+            progressRing.style.strokeDashoffset = offset;
+            
+            // Simulate loading of modules
+            setTimeout(() => {
+                const modules = document.querySelectorAll('.opacity-60');
+                modules.forEach(module => {
+                    module.classList.remove('opacity-60');
+                });
+            }, 1500);
+        });
+    </script>
+</body>
+</html>
