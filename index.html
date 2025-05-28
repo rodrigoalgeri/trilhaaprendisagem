@@ -4,141 +4,624 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de Trilhas de Aprendizagem Personalizadas</title>
     <link rel="stylesheet" href="styles.css">
-    <script type="importmap">
-        {
-            "imports": {
-                "chart.js": "https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"
-            }
-        }
-    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </head>
 <body>
     <header>
-        <nav>
+        <div class="container">
             <div class="logo">
-                <img src="logo.png" alt="Logo Trilhas de Aprendizagem">
-                <h1>Trilhas Personalizadas</h1>
+                <img src="logo.png" alt="Logo da Instituição">
+                <h1>Trilhas de Aprendizagem</h1>
             </div>
-            <div class="user-info">
-                <span id="user-name">Rodrigo Lampert</span>
-                <div class="avatar">RL</div>
-            </div>
-        </nav>
+            <nav>
+                <button id="menu-toggle" class="menu-toggle" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul id="nav-menu">
+                    <li><a href="#home" class="active">Início</a></li>
+                    <li><a href="#trilhas">Minhas Trilhas</a></li>
+                    <li><a href="#dashboard">Dashboard</a></li>
+                    <li><a href="#perfil">Perfil</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
-        <section class="dashboard">
-            <h2>Sua Trilha de Aprendizagem</h2>
-            <div class="progress-overview">
-                <div class="progress-chart">
-                    <canvas id="progressChart"></canvas>
+        <section id="home" class="section active">
+            <div class="hero">
+                <div class="container">
+                    <div class="hero-content">
+                        <h2>Aprenda no seu ritmo, do seu jeito</h2>
+                        <p>Trilhas de aprendizagem personalizadas que se adaptam às suas necessidades, habilidades e objetivos.</p>
+                        <button class="cta-button" id="start-journey">Iniciar Jornada</button>
+                    </div>
+                    <div class="hero-image">
+                        <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_qp1q7mct.json" background="transparent" speed="1" loop autoplay></lottie-player>
+                    </div>
                 </div>
-                <div class="stats">
-                    <div class="stat-card">
-                        <h3>Conclusão</h3>
-                        <p><span id="completion-rate">68</span>%</p>
+            </div>
+
+            <div class="features container">
+                <h3>Como funciona</h3>
+                <div class="feature-cards">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_DTtXPr.json" background="transparent" speed="1" style="width: 100%; height: 120px;" loop autoplay></lottie-player>
+                        </div>
+                        <h4>Avaliação Personalizada</h4>
+                        <p>Identificamos seus pontos fortes e áreas de melhoria através de avaliações inteligentes.</p>
                     </div>
-                    <div class="stat-card">
-                        <h3>Tempo Dedicado</h3>
-                        <p><span id="time-spent">12</span>h</p>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_ydo1amjm.json" background="transparent" speed="1" style="width: 100%; height: 120px;" loop autoplay></lottie-player>
+                        </div>
+                        <h4>Trilhas Adaptativas</h4>
+                        <p>Conteúdos e atividades que se ajustam automaticamente ao seu ritmo e estilo de aprendizagem.</p>
                     </div>
-                    <div class="stat-card">
-                        <h3>Próxima Meta</h3>
-                        <p>Módulo 2 - <span id="next-goal">4</span> dias</p>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_z3fz43qj.json" background="transparent" speed="1" style="width: 100%; height: 120px;" loop autoplay></lottie-player>
+                        </div>
+                        <h4>Feedback Contínuo</h4>
+                        <p>Acompanhe seu progresso e receba recomendações personalizadas para avançar.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonials container">
+                <h3>O que dizem nossos alunos</h3>
+                <div class="testimonial-carousel" id="testimonial-carousel">
+                    <div class="testimonial-card active">
+                        <div class="testimonial-content">
+                            <p>"As trilhas personalizadas mudaram completamente minha experiência de aprendizado. Consegui avançar no meu próprio ritmo e me concentrar nas áreas que realmente precisava melhorar."</p>
+                            <div class="testimonial-author">
+                                <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Foto de Ana Silva">
+                                <div>
+                                    <h5>Ana Silva</h5>
+                                    <span>Estudante de Engenharia</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"O sistema identificou exatamente minhas dificuldades e me ofereceu conteúdos específicos para superá-las. Meu desempenho melhorou significativamente em poucas semanas."</p>
+                            <div class="testimonial-author">
+                                <img src="https://randomuser.me/api/portraits/men/54.jpg" alt="Foto de Carlos Mendes">
+                                <div>
+                                    <h5>Carlos Mendes</h5>
+                                    <span>Profissional de TI</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"Como professora, vejo o impacto positivo na motivação e no engajamento dos alunos. A plataforma realmente entende as necessidades individuais e cria experiências significativas."</p>
+                            <div class="testimonial-author">
+                                <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Foto de Patrícia Almeida">
+                                <div>
+                                    <h5>Patrícia Almeida</h5>
+                                    <span>Professora</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-controls">
+                    <button class="carousel-control prev" id="prev-testimonial" aria-label="Depoimento anterior">&#10094;</button>
+                    <div class="carousel-indicators">
+                        <span class="indicator active"></span>
+                        <span class="indicator"></span>
+                        <span class="indicator"></span>
+                    </div>
+                    <button class="carousel-control next" id="next-testimonial" aria-label="Próximo depoimento">&#10095;</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="trilhas" class="section">
+            <div class="container">
+                <h2>Minhas Trilhas de Aprendizagem</h2>
+                
+                <div class="search-filter">
+                    <div class="search">
+                        <input type="text" id="search-trilhas" placeholder="Buscar trilhas...">
+                        <button aria-label="Buscar"><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="filter">
+                        <select id="filter-trilhas">
+                            <option value="todas">Todas as trilhas</option>
+                            <option value="em-andamento">Em andamento</option>
+                            <option value="concluidas">Concluídas</option>
+                            <option value="recomendadas">Recomendadas</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="trilhas-grid" id="trilhas-grid">
+                    <div class="trilha-card em-andamento">
+                        <div class="trilha-progress">
+                            <div class="progress-bar" style="width: 65%"></div>
+                            <span>65%</span>
+                        </div>
+                        <div class="trilha-content">
+                            <h4>Desenvolvimento Web Frontend</h4>
+                            <p>Domine as tecnologias modernas para criação de interfaces web responsivas e interativas.</p>
+                            <div class="trilha-meta">
+                                <span><i class="fas fa-clock"></i> 15h restantes</span>
+                                <span><i class="fas fa-calendar"></i> Atualizado há 2 dias</span>
+                            </div>
+                            <div class="trilha-tags">
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                                <span>JavaScript</span>
+                            </div>
+                            <button class="trilha-button">Continuar</button>
+                        </div>
+                    </div>
+
+                    <div class="trilha-card recomendada">
+                        <div class="trilha-new">Recomendada para você</div>
+                        <div class="trilha-progress">
+                            <div class="progress-bar" style="width: 0%"></div>
+                            <span>0%</span>
+                        </div>
+                        <div class="trilha-content">
+                            <h4>Ciência de Dados Aplicada</h4>
+                            <p>Aprenda a extrair insights valiosos de grandes conjuntos de dados usando técnicas avançadas de análise.</p>
+                            <div class="trilha-meta">
+                                <span><i class="fas fa-clock"></i> 40h estimadas</span>
+                                <span><i class="fas fa-calendar"></i> Novo curso</span>
+                            </div>
+                            <div class="trilha-tags">
+                                <span>Python</span>
+                                <span>Estatística</span>
+                                <span>Machine Learning</span>
+                            </div>
+                            <button class="trilha-button">Iniciar</button>
+                        </div>
+                    </div>
+
+                    <div class="trilha-card concluida">
+                        <div class="trilha-progress">
+                            <div class="progress-bar" style="width: 100%"></div>
+                            <span>100%</span>
+                        </div>
+                        <div class="trilha-content">
+                            <h4>Fundamentos de UX/UI Design</h4>
+                            <p>Princípios e práticas para criar experiências de usuário intuitivas e atraentes.</p>
+                            <div class="trilha-meta">
+                                <span><i class="fas fa-trophy"></i> Concluído em 10/04/2023</span>
+                                <span><i class="fas fa-star"></i> Certificado disponível</span>
+                            </div>
+                            <div class="trilha-tags">
+                                <span>Design Thinking</span>
+                                <span>Prototipagem</span>
+                                <span>Usabilidade</span>
+                            </div>
+                            <button class="trilha-button">Ver certificado</button>
+                        </div>
+                    </div>
+
+                    <div class="trilha-card em-andamento">
+                        <div class="trilha-progress">
+                            <div class="progress-bar" style="width: 30%"></div>
+                            <span>30%</span>
+                        </div>
+                        <div class="trilha-content">
+                            <h4>Gestão Ágil de Projetos</h4>
+                            <p>Metodologias e ferramentas para liderar equipes e entregar projetos com eficiência.</p>
+                            <div class="trilha-meta">
+                                <span><i class="fas fa-clock"></i> 25h restantes</span>
+                                <span><i class="fas fa-calendar"></i> Atualizado há 5 dias</span>
+                            </div>
+                            <div class="trilha-tags">
+                                <span>Scrum</span>
+                                <span>Kanban</span>
+                                <span>Liderança</span>
+                            </div>
+                            <button class="trilha-button">Continuar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="trilha-discover">
+                    <h3>Descubra novas trilhas</h3>
+                    <p>Baseado no seu perfil e interesses, estas trilhas podem ser relevantes para você:</p>
+                    
+                    <div class="discover-carousel" id="discover-carousel">
+                        <div class="discover-card">
+                            <div class="discover-image">
+                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Curso de Inteligência Artificial">
+                            </div>
+                            <div class="discover-content">
+                                <h4>Inteligência Artificial Prática</h4>
+                                <p>Desenvolva soluções inteligentes usando frameworks modernos de IA.</p>
+                                <div class="discover-meta">
+                                    <span>40h de conteúdo</span>
+                                    <span>4.9 ★ (324 avaliações)</span>
+                                </div>
+                                <button class="discover-button">Ver detalhes</button>
+                            </div>
+                        </div>
+                        
+                        <div class="discover-card">
+                            <div class="discover-image">
+                                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Curso de Marketing Digital">
+                            </div>
+                            <div class="discover-content">
+                                <h4>Marketing Digital Estratégico</h4>
+                                <p>Estratégias eficazes para aumentar visibilidade e conversão no ambiente digital.</p>
+                                <div class="discover-meta">
+                                    <span>35h de conteúdo</span>
+                                    <span>4.7 ★ (218 avaliações)</span>
+                                </div>
+                                <button class="discover-button">Ver detalhes</button>
+                            </div>
+                        </div>
+                        
+                        <div class="discover-card">
+                            <div class="discover-image">
+                                <img src="https://images.unsplash.com/photo-1502101872923-d48509bff386?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Curso de Desenvolvimento Mobile">
+                            </div>
+                            <div class="discover-content">
+                                <h4>Desenvolvimento Mobile Multiplataforma</h4>
+                                <p>Crie aplicativos para iOS e Android com uma única base de código.</p>
+                                <div class="discover-meta">
+                                    <span>50h de conteúdo</span>
+                                    <span>4.8 ★ (412 avaliações)</span>
+                                </div>
+                                <button class="discover-button">Ver detalhes</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-controls">
+                        <button class="carousel-control prev" id="prev-discover" aria-label="Trilha anterior">&#10094;</button>
+                        <button class="carousel-control next" id="next-discover" aria-label="Próxima trilha">&#10095;</button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="learning-path">
-            <h2>Recomendações Personalizadas</h2>
-            <p class="recommendation-intro">Com base no seu perfil e desempenho, recomendamos as seguintes atividades:</p>
-            
-            <div class="course-cards">
-                <div class="course-card">
-                    <div class="card-header">
-                        <span class="tag">Recomendado</span>
-                        <span class="difficulty">Intermediário</span>
+        <section id="dashboard" class="section">
+            <div class="container">
+                <h2>Meu Dashboard de Aprendizagem</h2>
+                
+                <div class="dashboard-cards">
+                    <div class="dashboard-card">
+                        <div class="dashboard-card-header">
+                            <h4>Progresso Geral</h4>
+                            <select id="progress-period">
+                                <option value="week">Esta Semana</option>
+                                <option value="month" selected>Este Mês</option>
+                                <option value="year">Este Ano</option>
+                            </select>
+                        </div>
+                        <div class="dashboard-card-content">
+                            <canvas id="progress-chart"></canvas>
+                        </div>
                     </div>
-                    <h3>Análise de Requisitos Avançada</h3>
-                    <p>Aprofunde seus conhecimentos em técnicas de elicitação de requisitos com stakeholders complexos.</p>
-                    <div class="card-footer">
-                        <span class="duration">4h</span>
-                        <button class="btn-primary">Continuar</button>
+                    
+                    <div class="dashboard-card">
+                        <div class="dashboard-card-header">
+                            <h4>Distribuição de Habilidades</h4>
+                        </div>
+                        <div class="dashboard-card-content">
+                            <canvas id="skills-chart"></canvas>
+                        </div>
                     </div>
-                </div>
-
-                <div class="course-card">
-                    <div class="card-header">
-                        <span class="tag">Complementar</span>
-                        <span class="difficulty">Básico</span>
-                    </div>
-                    <h3>Gestão de Riscos em Projetos</h3>
-                    <p>Identifique e mitigue riscos em projetos de desenvolvimento de software educacional.</p>
-                    <div class="card-footer">
-                        <span class="duration">2h</span>
-                        <button class="btn-secondary">Começar</button>
-                    </div>
-                </div>
-
-                <div class="course-card">
-                    <div class="card-header">
-                        <span class="tag">Baseado nos seus interesses</span>
-                        <span class="difficulty">Avançado</span>
-                    </div>
-                    <h3>LGPD na Educação Digital</h3>
-                    <p>Aprenda a implementar fluxos de dados em conformidade com a Lei Geral de Proteção de Dados.</p>
-                    <div class="card-footer">
-                        <span class="duration">3h</span>
-                        <button class="btn-secondary">Começar</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="preferences">
-            <h2>Personalizar Minha Experiência</h2>
-            <div class="preference-controls">
-                <div class="preference-group">
-                    <h3>Ritmo de Aprendizado</h3>
-                    <div class="slider-container">
-                        <span>Lento</span>
-                        <input type="range" min="1" max="5" value="3" id="pace-slider">
-                        <span>Rápido</span>
+                    
+                    <div class="dashboard-card">
+                        <div class="dashboard-card-header">
+                            <h4>Resumo de Atividades</h4>
+                        </div>
+                        <div class="dashboard-card-content activity-summary">
+                            <div class="activity-item">
+                                <div class="activity-icon completed">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                <div class="activity-details">
+                                    <h5>Módulo concluído: Princípios de UX Design</h5>
+                                    <p>Ontem às 14:30</p>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon assessment">
+                                    <i class="fas fa-clipboard-check"></i>
+                                </div>
+                                <div class="activity-details">
+                                    <h5>Avaliação realizada: JavaScript Avançado</h5>
+                                    <p>3 dias atrás</p>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon started">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                                <div class="activity-details">
+                                    <h5>Nova trilha iniciada: Gestão Ágil de Projetos</h5>
+                                    <p>1 semana atrás</p>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon certificate">
+                                    <i class="fas fa-certificate"></i>
+                                </div>
+                                <div class="activity-details">
+                                    <h5>Certificado emitido: Fundamentos de UX/UI Design</h5>
+                                    <p>2 semanas atrás</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="preference-group">
-                    <h3>Formato Preferido</h3>
-                    <div class="checkbox-group">
-                        <label><input type="checkbox" checked> Vídeos</label>
-                        <label><input type="checkbox" checked> Textos</label>
-                        <label><input type="checkbox"> Podcasts</label>
-                        <label><input type="checkbox" checked> Exercícios práticos</label>
+                <div class="dashboard-row">
+                    <div class="dashboard-card full-width">
+                        <div class="dashboard-card-header">
+                            <h4>Próximos Passos Recomendados</h4>
+                        </div>
+                        <div class="dashboard-card-content recommended-steps">
+                            <div class="step-item">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h5>Completar o módulo "Protótipos Interativos com Figma"</h5>
+                                    <p>Esse módulo complementa perfeitamente os conhecimentos que você adquiriu em UX Design.</p>
+                                    <button class="step-button">Iniciar módulo</button>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h5>Realizar a avaliação de meio-termo em "Desenvolvimento Web Frontend"</h5>
+                                    <p>Isso ajudará a identificar áreas que podem precisar de revisão antes de avançar.</p>
+                                    <button class="step-button">Fazer avaliação</button>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h5>Explorar a trilha "Ciência de Dados Aplicada"</h5>
+                                    <p>Com base no seu interesse em análise de dados, esta trilha pode complementar seu perfil profissional.</p>
+                                    <button class="step-button">Ver detalhes</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <div class="preference-group">
-                    <h3>Áreas de Interesse</h3>
-                    <div class="tag-selector">
-                        <span class="interest-tag selected">Análise de Requisitos</span>
-                        <span class="interest-tag selected">Desenvolvimento Ágil</span>
-                        <span class="interest-tag">UX Design</span>
-                        <span class="interest-tag selected">LGPD</span>
-                        <span class="interest-tag">Inteligência Artificial</span>
+        <section id="perfil" class="section">
+            <div class="container">
+                <h2>Meu Perfil de Aprendizagem</h2>
+                
+                <div class="profile-grid">
+                    <div class="profile-card personal-info">
+                        <div class="profile-header">
+                            <h3>Informações Pessoais</h3>
+                            <button class="edit-button" id="edit-profile" aria-label="Editar perfil"><i class="fas fa-edit"></i></button>
+                        </div>
+                        <div class="profile-content">
+                            <div class="profile-avatar">
+                                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Foto de perfil">
+                                <button class="change-avatar" aria-label="Alterar foto"><i class="fas fa-camera"></i></button>
+                            </div>
+                            <div class="profile-details">
+                                <div class="profile-field">
+                                    <label>Nome completo</label>
+                                    <p>Mariana Costa Santos</p>
+                                </div>
+                                <div class="profile-field">
+                                    <label>E-mail</label>
+                                    <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a3cec2d1cac2cdc28dd0c2cdd7ccd0e3c6cec2cacf8dc0ccce">[email&#160;protected]</a></p>
+                                </div>
+                                <div class="profile-field">
+                                    <label>Área de atuação</label>
+                                    <p>Design de Produto</p>
+                                </div>
+                                <div class="profile-field">
+                                    <label>Nível acadêmico</label>
+                                    <p>Pós-graduação</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="profile-card learning-style">
+                        <div class="profile-header">
+                            <h3>Estilo de Aprendizagem</h3>
+                            <button class="info-button" aria-label="Informações sobre estilos de aprendizagem"><i class="fas fa-info-circle"></i></button>
+                        </div>
+                        <div class="profile-content">
+                            <div class="learning-style-chart">
+                                <canvas id="learning-style-chart"></canvas>
+                            </div>
+                            <div class="learning-style-summary">
+                                <p>Seu estilo predominante é <strong>Visual-Prático</strong>, o que significa que você aprende melhor através de demonstrações visuais e atividades práticas.</p>
+                                <p>Recomendamos conteúdos com:</p>
+                                <ul>
+                                    <li>Vídeos demonstrativos</li>
+                                    <li>Exercícios práticos</li>
+                                    <li>Projetos aplicados</li>
+                                    <li>Infográficos e diagramas</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="profile-card interests">
+                        <div class="profile-header">
+                            <h3>Interesses e Objetivos</h3>
+                            <button class="edit-button" id="edit-interests" aria-label="Editar interesses"><i class="fas fa-edit"></i></button>
+                        </div>
+                        <div class="profile-content">
+                            <div class="interests-tags">
+                                <h4>Áreas de interesse</h4>
+                                <div class="tags-container">
+                                    <span class="tag">UX/UI Design</span>
+                                    <span class="tag">Design Thinking</span>
+                                    <span class="tag">Desenvolvimento Web</span>
+                                    <span class="tag">Gestão de Projetos</span>
+                                    <span class="tag">Visualização de Dados</span>
+                                    <button class="add-tag" aria-label="Adicionar interesse"><i class="fas fa-plus"></i></button>
+                                </div>
+                            </div>
+                            <div class="learning-goals">
+                                <h4>Objetivos de aprendizagem</h4>
+                                <div class="goal-item">
+                                    <div class="goal-check">
+                                        <input type="checkbox" id="goal1" checked>
+                                        <label for="goal1"></label>
+                                    </div>
+                                    <div class="goal-text">
+                                        <p>Aprender fundamentos de programação front-end para colaborar melhor com desenvolvedores</p>
+                                    </div>
+                                </div>
+                                <div class="goal-item">
+                                    <div class="goal-check">
+                                        <input type="checkbox" id="goal2">
+                                        <label for="goal2"></label>
+                                    </div>
+                                    <div class="goal-text">
+                                        <p>Desenvolver habilidades avançadas em prototipagem de alta fidelidade</p>
+                                    </div>
+                                </div>
+                                <div class="goal-item">
+                                    <div class="goal-check">
+                                        <input type="checkbox" id="goal3">
+                                        <label for="goal3"></label>
+                                    </div>
+                                    <div class="goal-text">
+                                        <p>Aprender metodologias ágeis para liderar equipes de design</p>
+                                    </div>
+                                </div>
+                                <button class="add-goal"><i class="fas fa-plus"></i> Adicionar objetivo</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="profile-card certificates">
+                        <div class="profile-header">
+                            <h3>Certificados e Conquistas</h3>
+                        </div>
+                        <div class="profile-content">
+                            <div class="certificates-list">
+                                <div class="certificate-item">
+                                    <div class="certificate-icon">
+                                        <i class="fas fa-certificate"></i>
+                                    </div>
+                                    <div class="certificate-details">
+                                        <h4>Fundamentos de UX/UI Design</h4>
+                                        <p>Emitido em 10/04/2023 • 40 horas</p>
+                                        <div class="certificate-actions">
+                                            <button class="view-certificate">Visualizar</button>
+                                            <button class="download-certificate">Download</button>
+                                            <button class="share-certificate">Compartilhar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="certificate-item">
+                                    <div class="certificate-icon">
+                                        <i class="fas fa-certificate"></i>
+                                    </div>
+                                    <div class="certificate-details">
+                                        <h4>Design Thinking Aplicado</h4>
+                                        <p>Emitido em 15/02/2023 • 25 horas</p>
+                                        <div class="certificate-actions">
+                                            <button class="view-certificate">Visualizar</button>
+                                            <button class="download-certificate">Download</button>
+                                            <button class="share-certificate">Compartilhar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="achievements">
+                                <h4>Conquistas</h4>
+                                <div class="achievements-grid">
+                                    <div class="achievement-item earned" title="Explorador: Concluiu 5 módulos diferentes">
+                                        <i class="fas fa-compass"></i>
+                                    </div>
+                                    <div class="achievement-item earned" title="Perseverante: Manteve uma sequência de 10 dias de estudo">
+                                        <i class="fas fa-fire"></i>
+                                    </div>
+                                    <div class="achievement-item earned" title="Colaborador: Participou de 3 fóruns de discussão">
+                                        <i class="fas fa-users"></i>
+                                    </div>
+                                    <div class="achievement-item" title="Especialista: Complete uma trilha com nota acima de 90%">
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div class="achievement-item" title="Mentor: Ajude outros alunos em pelo menos 5 dúvidas">
+                                        <i class="fas fa-hands-helping"></i>
+                                    </div>
+                                    <div class="achievement-item" title="Inovador: Envie um projeto criativo que receba destaque">
+                                        <i class="fas fa-lightbulb"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-                <button id="save-preferences" class="btn-primary">Salvar Preferências</button>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>Sistema de Trilhas de Aprendizagem Personalizadas | Projeto Integrador 2025.1</p>
-        <p>Desenvolvido como parte do Projeto de Extensão: Trilhas formativas para aprendizagem online (AMV.130421)</p>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="logo.png" alt="Logo da Instituição" class="footer-logo">
+                    <p>Sistema de Trilhas de Aprendizagem Personalizadas que adapta conteúdos às necessidades individuais dos alunos para aumentar engajamento e retenção.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="#home">Início</a></li>
+                        <li><a href="#trilhas">Trilhas</a></li>
+                        <li><a href="#dashboard">Dashboard</a></li>
+                        <li><a href="#perfil">Perfil</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Suporte</h4>
+                    <ul>
+                        <li><a href="#">Centro de Ajuda</a></li>
+                        <li><a href="#">Contato</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contato</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-envelope"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="bfdcd0d1cbdecbd0ffd6d1cccbd6cbcad6dcded091dadbca91ddcd">[email&#160;protected]</a></li>
+                        <li><i class="fas fa-phone"></i> (11) 4567-8900</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Av. Educação, 1000 - São Paulo, SP</li>
+                    </ul>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Sistema de Trilhas de Aprendizagem Personalizadas. Todos os direitos reservados.</p>
+            </div>
+        </div>
     </footer>
 
-    <script src="script.js" type="module"></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="scripts.js"></script>
 </body>
 </html>
